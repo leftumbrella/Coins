@@ -16,11 +16,17 @@
         <file>res/LevelCompletedDialogBg.png</file>
         <file>res/LevelIcon.png</file>
         <file>res/LevelWinSound.wav</file>
+        <file>res/main_logo.png</file>
         <file>res/MenuSceneBg.png</file>
         <file>res/MenuSceneStartButton.png</file>
         <file>res/OtherSceneBg.png</file>
         <file>res/PlayLevelSceneBg.png</file>
         <file>res/TapButtonSound.wav</file>
         <file>res/Title.png</file>
+        <file>res/title_icon.png</file>
+        <file>res/btn_play.png</file>
+        <file>res/btn_play_select.png</file>
+        <file>res/btn_back.png</file>
+        <file>res/btn_back_select.png</file>
     </qresource>
 </RCC>
