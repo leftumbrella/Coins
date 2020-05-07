@@ -23,6 +23,18 @@ void MyPushButton::leaveEvent(QEvent*){
     }
     setPic(_btnPic);
 }
+void MyPushButton::mousePressEvent(QMouseEvent* e){
+    if(e->button() == Qt::LeftButton){
+        setPic(_btnPic);
+    }
+    QPushButton::mousePressEvent(e);
+}
+void MyPushButton::mouseReleaseEvent(QMouseEvent* e){
+    if(e->button() == Qt::LeftButton){
+        setPic(_btnPicSelect);
+    }
+    QPushButton::mouseReleaseEvent(e);
+}
 bool MyPushButton::setPic(QString pic_path){
     QPixmap pix;
     if(!pix.load(pic_path)){

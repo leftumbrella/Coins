@@ -17,12 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     chooselevelsscence.cpp \
+    gamescence.cpp \
     main.cpp \
     mainscene.cpp \
     mypushbutton.cpp
 
 HEADERS += \
     chooselevelsscence.h \
+    gamescence.h \
     mainscene.h \
     mypushbutton.h
 

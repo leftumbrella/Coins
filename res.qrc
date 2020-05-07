@@ -28,5 +28,6 @@
         <file>res/btn_play_select.png</file>
         <file>res/btn_back.png</file>
         <file>res/btn_back_select.png</file>
+        <file>res/LevelIcon_select.png</file>
     </qresource>
 </RCC>
