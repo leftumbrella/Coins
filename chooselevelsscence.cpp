@@ -18,10 +18,12 @@ ChooseLevelsScence::ChooseLevelsScence(QWidget *parent) : QMainWindow(parent){
     connect(action_quit,&QAction::triggered,[=](){
         QApplication::quit();
     });
-
+    QSound *bacn_sou = new QSound(":/res/BackButtonSound.wav",this);
+    QSound *select_sou = new QSound(":/res/TapButtonSound.wav",this);
     _btn_back = new MyPushButton(":/res/btn_back.png",":/res/btn_back_select.png",0.3);
     _btn_back->setParent(this);
     connect(_btn_back,&QPushButton::clicked,[=](){
+        bacn_sou->play();
         hide();
         emit hided();
     });
@@ -32,6 +34,7 @@ ChooseLevelsScence::ChooseLevelsScence(QWidget *parent) : QMainWindow(parent){
 
         _levels[i]->setParent(this);
         connect(_levels[i],&MyPushButton::clicked,[=](){
+            select_sou->play();
             qDebug() << "You click levels button" << i+1;
             hide();
             if(_game_scence){
@@ -39,6 +42,7 @@ ChooseLevelsScence::ChooseLevelsScence(QWidget *parent) : QMainWindow(parent){
             }
             _game_scence= new GameScence(i+1);
             connect(_game_scence,&GameScence::hided,this,&ChooseLevelsScence::dehide);
+            _game_scence->setGeometry(this->geometry());
             _game_scence->show();
         });
 
@@ -81,5 +85,6 @@ void ChooseLevelsScence::resizeEvent(QResizeEvent*){
     }
 }
 void ChooseLevelsScence::dehide(){
+    this->setGeometry(_game_scence->geometry());
     show();
 }

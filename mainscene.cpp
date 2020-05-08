@@ -5,7 +5,7 @@ MainScene::MainScene(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainScene){
     ui->setupUi(this);
-
+    QSound *start_sou = new QSound(":/res/TapButtonSound.wav",this);
     _choLvScence = new ChooseLevelsScence();
     setWindowTitle(tr("翻金币"));
     setWindowIcon(QIcon(":/res/title_icon.png"));
@@ -18,7 +18,9 @@ MainScene::MainScene(QWidget *parent)
     _btn_play = new MyPushButton(":/res/btn_play.png",":/res/btn_play_select.png");
     _btn_play->setParent(this);
     connect(_btn_play,&QPushButton::clicked,[=](){
+        start_sou->play();
         hide();
+        _choLvScence->setGeometry(this->geometry());
         _choLvScence->show();
     });
 
@@ -46,6 +48,7 @@ void MainScene::resizeEvent(QResizeEvent*){
     _btn_play->move(this->width()*.5-_btn_play->width()*.5,this->height()*.7);
 }
 void MainScene::dehide(){
+    setGeometry(_choLvScence->geometry());
     show();
 }
 

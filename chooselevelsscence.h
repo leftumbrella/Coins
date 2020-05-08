@@ -9,6 +9,7 @@
 #include <QPainter>
 #include <QVector>
 #include <QLabel>
+#include <QSound>
 class ChooseLevelsScence : public QMainWindow
 {
     Q_OBJECT

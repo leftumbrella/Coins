@@ -4,6 +4,7 @@
 #include "mypushbutton.h"
 #include "chooselevelsscence.h"
 #include <QMainWindow>
+#include <QSound>
 #include <QPainter>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainScene; }
